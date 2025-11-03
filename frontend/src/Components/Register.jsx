@@ -25,7 +25,7 @@ function Register() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    fetch("http://localhost:8000/register/generate-otp", {
+    fetch("https://smart-nutrition-tracker-f9e0.onrender.com/register/generate-otp", {
       method: "POST",
       body: JSON.stringify({ email: userDetails.email }),
       headers: {
@@ -47,7 +47,7 @@ function Register() {
   function handleOtpVerification(event) {
     event.preventDefault();
 
-    fetch("http://localhost:8000/register/verify-otp", {
+    fetch("https://smart-nutrition-tracker-f9e0.onrender.com/register/verify-otp", {
       method: "POST",
       body: JSON.stringify({ ...userDetails, otp }),
       headers: {

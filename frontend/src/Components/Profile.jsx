@@ -44,7 +44,7 @@ const Profile = () => {
 
   useEffect(() => {
     // Fetch user info to get weight and set water goal
-    fetch(`http://localhost:8000/userinfo/${loggedData.loggedUser.userid}`, {
+    fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/userinfo/${loggedData.loggedUser.userid}`, {
       method: 'GET',
       headers: {
         "Authorization": `Bearer ${loggedData.loggedUser.token}`,
@@ -68,7 +68,7 @@ const Profile = () => {
   // Fetch profile photo when component mounts or when userId changes
   useEffect(() => {
     if (loggedData.loggedUser && loggedData.loggedUser.userid) {
-      fetch(`http://localhost:8000/upload_profile_photo/${loggedData.loggedUser.userid}`, {
+      fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/upload_profile_photo/${loggedData.loggedUser.userid}`, {
         method: 'GET',
         headers: {
           "Authorization": `Bearer ${loggedData.loggedUser.token}`,
@@ -109,7 +109,7 @@ const Profile = () => {
   const caloriePercenatge=((calorieIntake/calorieGoal)*100).toFixed(2);
   
   useEffect(() => {
-    fetch(`http://localhost:8000/track/${loggedData.loggedUser.userid}/${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`, {
+    fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/track/${loggedData.loggedUser.userid}/${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${loggedData.loggedUser.token}`
@@ -132,7 +132,7 @@ const Profile = () => {
       // Get the current date in YYYY-MM-DD format
       const currentDate = new Date().toISOString().split('T')[0];
   
-      fetch(`http://localhost:8000/water_intake/${loggedData.loggedUser.userid}/${currentDate}`, {
+      fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/water_intake/${loggedData.loggedUser.userid}/${currentDate}`, {
         method: 'GET',
         headers: {
           "Authorization": `Bearer ${loggedData.loggedUser.token}`,
@@ -163,7 +163,7 @@ const Profile = () => {
     const currentDate = new Date().toISOString().split('T')[0];
   
     // Make POST request to log the water intake
-    fetch('http://localhost:8000/water_intake', {
+    fetch('https://smart-nutrition-tracker-f9e0.onrender.com/water_intake', {
       method: 'POST',
       headers: {
         "Authorization": `Bearer ${loggedData.loggedUser.token}`,
@@ -193,7 +193,7 @@ const Profile = () => {
       formData.append('userId', loggedData.loggedUser.userid);
   
       // Send the image as FormData
-      fetch('http://localhost:8000/upload_profile_photo', {
+      fetch('https://smart-nutrition-tracker-f9e0.onrender.com/upload_profile_photo', {
         method: 'POST',
         headers: {
           "Authorization": `Bearer ${loggedData.loggedUser.token}`,
@@ -226,7 +226,7 @@ const Profile = () => {
     setWaterIntake(newWaterIntake);
 
     // Send the water intake data to the backend
-    fetch('http://localhost:8000/water_intake', {
+    fetch('https://smart-nutrition-tracker-f9e0.onrender.com/water_intake', {
       method: 'POST',
       headers: {
         "Authorization": `Bearer ${loggedData.loggedUser.token}`,
@@ -318,7 +318,7 @@ export default Profile;
     };
 
     console.log("Data to be sent:", physicalData);
-    fetch("http://localhost:8000/physical_info", {
+    fetch("https://smart-nutrition-tracker-f9e0.onrender.com/physical_info", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${loggedData.loggedUser.token}`,

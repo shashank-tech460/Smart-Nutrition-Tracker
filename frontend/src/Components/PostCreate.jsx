@@ -19,7 +19,7 @@ export default function PostCreate() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/user/${loggedData.loggedUser.userid}/posts`, {
+                const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/user/${loggedData.loggedUser.userid}/posts`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${loggedData.loggedUser.token}`,
@@ -55,7 +55,7 @@ export default function PostCreate() {
         const confirmDelete = window.confirm("Are you sure you want to delete this post?");
         if (confirmDelete) {
             try {
-                const response = await fetch(`http://localhost:8000/posts/${postId}`, {
+                const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/posts/${postId}`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': `Bearer ${loggedData.loggedUser.token}`,
@@ -98,7 +98,7 @@ export default function PostCreate() {
         }
 
         try {
-            const response = await fetch('http://localhost:8000/posts', {
+            const response = await fetch('https://smart-nutrition-tracker-f9e0.onrender.com/posts', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${loggedData.loggedUser.token}`,

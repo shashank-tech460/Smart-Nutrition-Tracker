@@ -126,7 +126,7 @@ const uniqueFoodDetails = Array.from(uniqueFoodDetailsMap.values());
 
     console.log('Tracking food item:', trackedItem);
 
-    fetch('http://localhost:8000/track', {
+    fetch('https://smart-nutrition-tracker-f9e0.onrender.com/track', {
       method: 'POST',
       body: JSON.stringify(trackedItem),
       headers: {

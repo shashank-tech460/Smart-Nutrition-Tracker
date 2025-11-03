@@ -25,7 +25,7 @@ function Login() {
         event.preventDefault();
         console.log(userCreds);
 
-        fetch("http://localhost:8000/login", {
+        fetch("https://smart-nutrition-tracker-f9e0.onrender.com/login", {
             method: "POST",
             body: JSON.stringify(userCreds),
             headers: {

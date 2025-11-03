@@ -32,7 +32,7 @@ const Community = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/posts`, {
+                const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/posts`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${loggedData.loggedUser.token}`,

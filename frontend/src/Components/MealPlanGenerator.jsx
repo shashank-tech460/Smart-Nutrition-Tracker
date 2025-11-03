@@ -19,7 +19,7 @@ const MealPlanGenerator = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:8000/userinfo/${loggedUser.userid}`); // Ensure API endpoint is correct
+        const response = await axios.get(`https://smart-nutrition-tracker-f9e0.onrender.com/userinfo/${loggedUser.userid}`); // Ensure API endpoint is correct
         setUserData(response.data);
       } catch (err) {
         console.error('Failed to fetch user data', err);

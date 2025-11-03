@@ -12,7 +12,7 @@ const ViewPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/posts/${postId}`);
+        const response = await axios.get(`https://smart-nutrition-tracker-f9e0.onrender.com/posts/${postId}`);
         if (response.status === 200) {
           setPost(response.data);
         } else {

@@ -10,7 +10,7 @@ const SlotBooking = () => {
 
   useEffect(() => {
     // Fetch slots from the server
-    fetch('http://localhost:8000/api/slots')
+    fetch('https://smart-nutrition-tracker-f9e0.onrender.com/api/slots')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch slots');
         return res.json();
@@ -28,7 +28,7 @@ const SlotBooking = () => {
 
   const handleBooking = async (slotId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/book-slot/${slotId}`, {
+      const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/api/book-slot/${slotId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const SlotBooking = () => {
 
   const handleUnblock = async (slotId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/unblock-slot/${slotId}`, {
+      const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/api/unblock-slot/${slotId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

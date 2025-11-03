@@ -109,7 +109,7 @@ const UserInfo = () => {
                     return;
                 }
 
-                const response = await fetch(`http://localhost:8000/userinfo/${userId}`, {
+                const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/userinfo/${userId}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${loggedData.loggedUser.token}`,
@@ -159,7 +159,7 @@ const UserInfo = () => {
         };
     
         try {
-            const response = await fetch(`http://localhost:8000/userinfo`, {
+            const response = await fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/userinfo`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${loggedData.loggedUser.token}`,

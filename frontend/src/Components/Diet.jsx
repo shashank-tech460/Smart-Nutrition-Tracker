@@ -24,7 +24,7 @@ export default function Diet()
 
     useEffect(()=>{
         
-        fetch(`http://localhost:8000/track/${loggedData.loggedUser.userid}/${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`,{
+        fetch(`https://smart-nutrition-tracker-f9e0.onrender.com/track/${loggedData.loggedUser.userid}/${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`,{
             method:"GET",
             headers:{
                 "Authorization":`Bearer ${loggedData.loggedUser.token}`
