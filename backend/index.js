@@ -25,7 +25,10 @@ const sendOtpEmail = require("./services/mailService.js")
 const authRoutes = require('./routes/auth');
 
 // Database connection
-mongoose.connect("mongodb://localhost:27017/nutrify")
+
+const MONGO_URI = process.env.MONGO_URI;
+
+mongoose.connect(MONGO_URI)
   .then(() => console.log("Database connection successful"))
   .catch((err) => console.log(err));
 
