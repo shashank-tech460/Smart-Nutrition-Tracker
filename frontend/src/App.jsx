@@ -12,7 +12,7 @@ import Private from './Components/Private'
 import Diet from "./Components/Diet"
 import PostCreate from './Components/PostCreate'
 import Community from './Components/Community'
-import UserInfo from './Components/Userinfo'
+import UserInfo from './Components/UserInfo'
 
 import { UserContext } from './contexts/UserContext'
 import { useState } from 'react'
