@@ -1,0 +1,157 @@
+/* GenerateWorkoutPlan.css */
+
+.app-container {
+    max-width: 800px; /* Increased width for horizontal layout */
+    margin: auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Darker container background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+    color: cadetblue;
+    font-size: 2rem; /* Increased font size for title */
+    margin-bottom: 10px;
+}
+
+/* Responsive Form */
+.horizontal-form {
+    display: grid; /* Use grid for form layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between input groups */
+}
+
+/* Form Group */
+.form-group {
+    display: flex; /* Use flexbox for alignment within the grid item */
+    align-items: center; /* Align items vertically */
+}
+
+/* Label Style */
+label {
+    display:block;
+    font-weight: bold;
+    color: #249e74;
+    margin-right: 10px; /* Space between label and input */
+    flex: 0 0 120px; /* Fixed width for label */
+}
+
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px; 
+    border: 1px solid #333;
+    border-radius: 8px; 
+    background-color: #2a2a2a; 
+    color: #ffffff; 
+    font-size: 1rem; 
+    flex-grow: 1;
+
+    width: 100%; /* Ensures the input takes full width */
+    
+} 
+
+/* Placeholder Color  */
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #b7abab;
+} 
+
+/* Button Style */
+button {
+    padding: 12px;
+    background-color: #2AAA8A; /* Button background color */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded button */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    grid-column: span 2; /* Button spans full width */
+}
+
+/* Button Hover State */
+button:hover {
+    background-color: #249e74; /* Darker shade on hover */
+}
+
+/* Disabled Button Style */
+button:disabled {
+    background-color: #555; /* Disabled button color */
+    cursor: not-allowed; /* Not-allowed cursor for disabled */
+}
+
+/* Workout Plan Styles */
+.workout-plan {
+    max-width: 800px; /* Increased width for horizontal layout */
+    margin: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    margin-top: 20px;
+    padding: 15px;
+    /* Darker background for workout plan */
+    border: 1px solid #2AAA8A; /* Border matching the button */
+    border-radius: 8px;
+   
+}
+
+/* Day Plan Styles */
+.day-plan {
+    margin-bottom: 15px;
+}
+
+.day-plan h4 {
+    color: #2AAA8A; /* Heading color for days */
+}
+
+.day-plan ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.day-plan li {
+    background-color: #dfd8d8; /* Slightly lighter background for items */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for list items */
+    margin-bottom: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for list items */
+
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller title font size */
+    }
+
+    form {
+        grid-template-columns: 1fr; /* Stack form elements on smaller screens */
+    }
+
+    label {
+        flex: 1 0 100px; /* Adjust label width */
+    }
+
+    button {
+        grid-column: span 1; /* Button full width */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2rem; /* Further decrease font size */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        font-size: 0.9rem; /* Smaller font size for inputs */
+    }
+}

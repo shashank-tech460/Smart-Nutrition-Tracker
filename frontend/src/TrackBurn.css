@@ -1,0 +1,79 @@
+/* TrackBurn.css */
+
+/* Container for the whole tracker */
+.calorie-tracker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Title styling */
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field styling */
+  input {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  /* Focus effect for input field */
+  input:focus {
+    border-color: #66b3ff;
+  }
+  
+  /* Button styling */
+  button {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #66b3ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #3385cc;
+  }
+  
+  /* Button disabled state */
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Calories result styling */
+  .calorie-result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  /* Calories burned text styling */
+  .calorie-result h3 {
+    font-size: 18px;
+    color: #4caf50;
+    margin: 0;
+  }
+  

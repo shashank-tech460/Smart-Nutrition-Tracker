@@ -1,0 +1,40 @@
+@"
+# Node.js dependencies
+node_modules/
+
+# Environment files
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory (from testing)
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional lock files
+package-lock.json
+yarn.lock
+"@ | Out-File -Encoding UTF8 .gitignore

@@ -1,0 +1,100 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .carousel-header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .carousel-header h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .carousel-header p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .dashboard-carousel {
+    padding: 2rem;
+  }
+  .dashboard-carousel img {
+    max-height: 400px; /* This will limit the height of the carousel images */
+    object-fit: cover;  /* Ensures the images retain their aspect ratio */
+    width: 100%;       /* Ensures the images take up the full width of the container */
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  /* Community Posts Section */
+.community-posts-section {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .community-posts-section h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .community-posts-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .community-card {
+    min-width: 250px;
+    flex: 0 0 auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Footer Section */
+  .dashboard-footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+
+ 
+  

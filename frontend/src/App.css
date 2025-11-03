@@ -1,0 +1,1423 @@
+* {
+  font-family: sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* .nav-link{
+  cursor: pointer;
+} */
+
+.form-block {
+  height: 100vh;
+  width: 100%;
+  background-color: #161616;
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background-color: #1f1d1d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+
+}
+
+.input{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  text-indent: 15px;
+  outline: none;
+  border: 2px solid rgb (121, 111, 111);
+}
+.inp 
+{
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  text-indent: 20px;
+  outline: none;
+  border: 1px solid gray;
+
+}
+.btn{
+  
+  padding:10px 50px;
+  border-radius: 10px;
+  border: 2px solid rgb (121, 111, 111);
+  background-color: rgb(105, 103, 198);
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color:  rgb(105, 103, 198);
+}
+
+.link{
+  color: rgba(180, 180, 235, 0.941);
+}
+.link:hover{
+  color: rgba(19, 19, 234, 0.941);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.not-found{
+  width:100%;
+  text-align: center;
+  background-color: #1f1d1d;
+  
+}
+.success{
+  color:green;
+}
+.invisible-msg{
+  opacity: 0;
+}
+.error{
+  color:red;
+}
+.search-inp
+{
+  width: 100%;
+  height: 45px;
+  text-indent: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 18px;
+}
+/*.track-container{
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+.search 
+{
+  width: 100%;
+  padding: 10px 0px;
+  background-color: gray; 
+   border-radius: 5px; 
+  position: relative;
+}
+.search-results
+{
+  width:100%;
+  padding: 10px 5px;
+  background-color: gray;
+  margin-top:10px;
+  position:absolute;
+}
+
+.food{
+  width: 100%;
+  padding: 30px 0px; 
+  background-color: red;
+  display:flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+.food-img{
+  width:100%;
+  height: 300px;
+  background-color: blue;
+  overflow:hidden;
+  border-radius:5px;
+}
+.food-image{
+  width:100%;
+
+}
+
+.nutrient{
+width:50%;
+padding: 10px 0px;
+/*background-color: green;
+}
+.track-control
+{
+  display: flex;
+  width: 100%;
+  column-gap: 2%;
+}
+
+.track-control > .inp
+{
+  width: 68%;
+}
+
+.track-control > .btn 
+{
+  width: 30%;
+  padding:10px 0px;
+} */
+
+
+/* diet */
+
+.dieter {
+
+  
+  max-width: 800px; /* Max width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+}
+.diet-container{
+/*  align-items: flex-start; */
+  font-family: 'Arial', sans-serif;
+  
+}
+
+input[type="date"] {
+  width: 100%; /* Full width input */
+  padding: 10px; /* Padding for input */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below input */
+  font-size: 16px; /* Font size */
+}
+
+.item {
+  background-color: #fff; /* White background for item */
+  padding: 15px; /* Padding inside item */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 15px; /* Space between items */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Shadow for items */
+}
+
+.item h3 {
+  margin: 0; /* Remove default margin */
+  font-size: 1.2rem; /* Font size for item title */
+  color: #333; /* Dark color for text */
+}
+
+.item p {
+  margin: 5px 0 0 0; /* Space above the paragraph */
+  color: #666; /* Lighter color for details */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.item:last-child {
+  font-weight: bold; /* Bold last item (total) */
+  background-color: #e3f2fd; /* Light blue background for total */
+  border: 1px solid #2196F3; /* Border color */
+}
+
+.item:last-child h3 {
+  font-size: 1.5rem; /* Larger font size for total */
+}
+
+.item:last-child p {
+  color: #333; /* Darker color for total details */
+}
+
+/* Profile.css */
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  
+}
+.profile-photo{
+  position: relative;
+}
+/* Left Container - Profile Info */
+.profile-left {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px; /* Vertical container */
+  height: 400px; /* Slightly taller */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-upload {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #2AAA8A; /* Green background for visibility */
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-photo label:hover {
+  background-color: rgba(42, 170, 138, 1);
+}
+.profile-details {
+  text-align: center;
+}
+
+.edit-profile {
+  background-color: rgb(156, 227, 156);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.chat{
+  background-color: #7bb0dc;
+  border-radius: 12px;
+  cursor: pointer;
+  border:none;
+  padding: 8px 16px;
+  color: white;
+}
+
+.edit-profile:hover {
+  background-color: #ff4b2b;
+}
+
+/* Right Side - 2 Containers */
+.profile-physical, 
+.profile-physical h3, 
+.profile-goal h3 {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.profile-chart , .set-goal{
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  height: 400px;
+  /* Bigger container for the chart */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.chart-placeholder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #666;
+}
+.profile-physical label + label {
+  margin-left: 5px;
+}
+/*set goal */
+.set-goal h3 {
+  color: #2AAA8A; /* Main title color */
+  margin-bottom: 20px; /* Spacing below the title */
+  font-size: 1.5em;
+}
+
+.set-goal p {
+  font-size: 1.2em; /* Slightly larger text */
+  color: #333; /* Dark text color */
+  margin: 10px 0; /* Space between paragraphs */
+}
+
+.set-goal strong {
+  color: #2AAA8A; /* Highlighted data */
+}
+
+progress {
+  width: 100%; /* Full width of the container */
+  height: 20px; /* Height of the progress bar */
+  border-radius: 10px; /* Rounded progress bar */
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0; /* Background for the progress bar */
+}
+
+progress::-webkit-progress-value {
+  background-color: #2AAA8A; /* Progress fill color */
+}
+
+progress::-moz-progress-bar {
+  background-color: #2AAA8A; /* For Firefox */
+}
+/* water intake */
+.water-monitor {
+
+  background-color: #f0f8ff; /* Light blue background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Set a width for the container */
+  margin: auto; /* Center it horizontally */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+
+}
+
+.water-monitor h3 {
+  font-size: 1.5em;
+  color: #2a5d84; /* Dark blue color */
+  margin-bottom: 10px;
+}
+
+.water-monitor p {
+  font-size: 1.1em;
+  margin: 8px 0;
+  color: #4b4b4b; /* Dark gray text */
+}
+
+.water-monitor button {
+  background-color: #36a2eb; /* Blue color for the button */
+  color: white;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.water-monitor button:hover {
+  background-color: #4ea6f1; /* Slightly darker blue when hovered */
+}
+
+.water-monitor p, .water-monitor button {
+  font-weight: bold;
+}
+
+.water-monitor .water-goal {
+  color: #2a5d84; /* Dark blue for goal */
+}
+
+.water-monitor .water-consumed {
+  color: #ff6347; /* Red for consumed water */
+}
+
+@media (max-width: 600px) {
+  .water-monitor {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+/* community Page */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.community-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.community-header {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  justify-content: space-between; /* Space between elements */
+  align-items: flex-start; /* Align items to the start */
+  margin-bottom: 20px; /* Space below header */
+}
+
+.search-input {
+  margin: 10px 0; /* Space above and below the search input */
+  padding: 10px; /* Padding inside the input */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  width: 100%; /* Full width */
+  max-width: 300px; /* Max width for the search input */
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-left: auto; /* Push buttons to the right */
+}
+
+.create-post-button,
+.view-my-posts-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.create-post-button:hover,
+.view-my-posts-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.create-post-button:focus,
+.view-my-posts-button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add custom focus style */
+}
+
+.articles {
+  display: grid; /* Use grid layout for articles */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 24px; /* Increased spacing between articles */
+  padding: 20px; /* Padding around the grid */
+}
+
+.article-card {
+  background-color: #ffffff; /* Card background color */
+  border-radius: 12px; /* Slightly rounded corners */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+}
+
+.article-card:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.article-image {
+  width: 100%; /* Full width */
+  height: 180px; /* Increased height for better visuals */
+  object-fit: cover; /* Cover the image */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+
+.article-content {
+  padding: 16px; /* Increased padding for spacing */
+}
+
+.article-title {
+  font-size: 1.3em; /* Slightly larger font size for title */
+  font-weight: bold;
+  color: #333; /* Dark color for title */
+  margin: 0; /* No margin */
+}
+
+.article-meta {
+  color: #888; /* Softer gray color for metadata */
+  font-size: 0.85em; /* Smaller font size for metadata */
+  margin-top: 8px; /* Space above meta info */
+}
+
+
+/* Footer styles */
+.community-footer {
+  text-align: center; /* Center footer content */
+  margin-top: 20px; /* Margin above footer */
+}
+
+.subscribe-button {
+  padding: 10px 20px;
+  background-color: #292d2a; /* Subscribe button color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  background-color: #92b599; /* Darker shade on hover */
+}
+/* post cREATE pAGE */
+.create-post-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.post-form {
+
+  margin-bottom: 40px;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  
+}
+
+.post-form input[type='text'],
+.post-form textarea,
+.post-form input[type='file'] {
+  width:100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.post-form button {
+  width:200px;
+  margin: auto;
+  background-color: #23713c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.post-form button:hover {
+  background-color: #0056b3;
+}
+
+.post-list {
+  margin-top: 20px;
+}
+
+.post {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.success-message {
+  color: green;
+  margin: 10px 0;
+}
+/*
+user post */
+.user-posts-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.post-list {
+  margin-top: 20px;
+}
+
+.post {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+/* UserPosts */
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.post-card {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: scale(1.05);
+}
+
+.post-title-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* post-card for all cards*/
+/* Card layout with image taking up half the height */
+.card {
+  margin-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures the card stretches fully */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content to the top and bottom */
+  height: 600px;
+  padding:10px;
+  overflow: hidden;
+}
+
+.card-img-wrapper {
+ /* Takes up half the card's height */
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Ensures image aspect ratio is maintained */
+}
+
+.card-title {
+  margin-top: 10px;
+}
+
+.card-text {
+  flex-grow: 1;
+  height:10px;
+  overflow: hidden; /* Takes up the available space between title and button */
+}
+
+.btn-group {
+  margin-top: 10px;
+  gap:2px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  width: 80%; /* Adjust this value to make the button group smaller */
+  margin-left: auto; /* Centers the button group horizontally */
+  margin-right: auto;
+}
+.view-button{
+border-radius: 5px;
+background-color: #a5e09c;
+
+}
+.edit-button{
+  border-radius: 5px;
+  background-color: #8db4df;
+  
+  }
+.d-flex {
+  display: flex;
+}
+
+.mt-auto {
+  margin-top: auto; /* Ensures buttons are always at the bottom of the card */
+}
+.text-body-secondary {
+  align-self: flex-start; /* Keeps the timestamp aligned at the top of the card */
+}
+
+/* personal-Info page */
+.diet-planner-form {
+  max-width: 800px; /* Increased width for horizontal layout */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+}
+
+.diet-planner-form h2 {
+  grid-column: span 2; /* Header takes up full width */
+  text-align: center;
+  color: #2AAA8A;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.diet-planner-form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.diet-planner-form input,
+.diet-planner-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.diet-planner-form input:focus,
+.diet-planner-form select:focus {
+  border-color: #2AAA8A;
+  outline: none;
+  box-shadow: 0 0 5px rgba(42, 170, 138, 0.5);
+}
+
+.diet-planner-form button {
+  grid-column: span 2; /* Button takes up full width */
+  
+  padding: 10px;
+  background-color: #2AAA8A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.diet-planner-form button:hover {
+  background-color: #239877;
+}
+
+.diet-planner-form .bmi,
+.diet-planner-form .calories {
+  grid-column: span 2; /* Span across both columns */
+  margin-top: 20px;
+  font-size: 18px;
+  color: #2AAA8A;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .diet-planner-form {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+  }
+
+  .diet-planner-form label,
+  .diet-planner-form input,
+  .diet-planner-form select,
+  .diet-planner-form button {
+    grid-column: span 1; /* Take up full width on small screens */
+  }
+}
+.bmi-cal,
+.meal-plan {
+    flex: 1; /* This will allow buttons to take equal space */
+    margin: 0 2px; /* Adjust as needed */
+    
+}
+
+/* Generator */
+#mainContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+select,
+input[type="number"] {
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  background-color: #2AAA8A; /* Green button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #239777;
+}
+
+#mealPlanDisplay {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.food-display-img {
+  max-width: 100px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* View-post *?
+/* Style for the main container of the post */
+.view-post-container {
+  max-width: 800px; /* Maximum width of the post */
+  margin: 20px auto; /* Center the container with margin */
+  padding: 20px; /* Add some padding */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; /* White background */
+}
+
+/* Center the title */
+.view-post-container h1 {
+  text-align: center; /* Center text */
+  font-size: 2rem; /* Font size for the title */
+  margin: 0 15px 15px 0; /* Space below the title */
+  color: #333; /* Dark gray color for the title */
+}
+
+/* Style for the image */
+.view-post-container img {
+  border-radius: 8px; /* Rounded corners for the image */
+  max-width: 250px; /* Limit the width of the image */
+  max-height: 300px; /* Maintain aspect ratio */
+  float: left; /* Float the image to the left */
+  margin: 0 15px 15px 0;
+  object-fit: cover /* Add margin for spacing around the image */
+}
+
+.post-content p {
+  font-size: 1.1rem; /* Font size for the content */
+  line-height: 1.6; /* Line height for better readability */
+  color: #555; /* Medium gray color for text */
+  margin: 0 0 15px; /* Add bottom margin for spacing between paragraphs */
+}
+
+/* Style for the posted date */
+.post-content p strong {
+  color: #333; /* Darker color for the label */
+}
+#img-float{
+  float:left;
+}
+/* Generator */
+
+
+/* Advice */
+ 
+/* Nutrition Advice Container */
+.nutrition-advice {
+  padding: 40px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+.nutrition-advice h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Description */
+.nutrition-advice .description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #34495e;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Meal Plan Section */
+.meal-plan {
+  margin-bottom: 40px;
+}
+
+.meal-plan h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.meal-plan .meal {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.meal-plan .meal h5 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.meal-plan .meal ul {
+  padding-left: 20px;
+  color: #7f8c8d;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.meal-plan .meal ul li {
+  list-style: disc;
+}
+
+.meal-plan .meal .calories {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e74c3c;
+}
+
+/* Macronutrients Section */
+.macronutrients {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.macronutrients div {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.macronutrients div span {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.macronutrients div p {
+  font-size: 16px;
+}
+
+/* SEO Content */
+.seo-content {
+  font-size: 14px;
+  color: #7f8c8d;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .macronutrients {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .meal-plan {
+      padding: 10px;
+  }
+
+  .nutrition-advice {
+      padding: 20px;
+  }
+}
+
+
+
+/* Community Container */
+.community-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Community Header */
+.community-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.community-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.community-header h2 {
+  font-size: 1.5em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Search Input */
+.search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.create-post-button,
+.view-my-posts-button {
+  padding: 10px 20px;
+  background-color: #2AAA8A; /* Accent color */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.create-post-button:hover,
+.view-my-posts-button:hover {
+  background-color: #238a6d;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  margin-right: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Body */
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.4;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.text-body-secondary {
+  color: #999;
+  font-size: 0.85em;
+}
+
+/* View Button */
+.view-button {
+  padding: 8px 12px;
+  background-color: #2AAA8A;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #238a6d;
+}
+
+
+/* TrackBurn.css */
+
+.calories-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calories-container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.input-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.input-section button:hover {
+  background-color: #0056b3;
+}
+
+.loading {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.result-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.result-section h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.result-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.result-section li {
+  background: #e8f5e9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #cce7d0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* */
+/* Slot Booking Styles */
+.slot-booking-container {
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+h1 {
+  text-align: center;
+}
+
+.slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slot {
+  padding: 15px;
+  text-align: center;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.slot.available {
+  background-color: #81c784;
+}
+
+.slot.booked {
+  background-color: #ff7043;
+}
+
+.slot.booked-by-member {
+  background-color: #66bb6a;
+}
+
+button.unblock-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.unblock-button:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
