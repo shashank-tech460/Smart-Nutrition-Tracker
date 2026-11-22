@@ -1,0 +1,87 @@
+erDiagram
+    USER ||--o{ TRACKING : "logs meals"
+    USER ||--o{ WATER_INTAKE : "records water"
+    USER ||--o{ POST : "writes"
+    USER ||--o| USER_INFO : "has profile (1:1 intended, not enforced)"
+    USER ||--o| PROFILE_PHOTO : "has photo (1:1 intended, not enforced)"
+    USER ||--o{ PHYSICAL : "unused model"
+    FOOD |o..o{ TRACKING : "foodId is a plain String, no ref"
+
+    USER {
+        ObjectId _id PK
+        String name
+        String email UK "required, unique index"
+        String password "bcrypt hash"
+        Number age "min 12"
+        String otp "plaintext, cleared after verify"
+        Date otpExpiry "now + 5 minutes"
+        Boolean isVerified "default false"
+        Date createdAt
+        Date updatedAt
+    }
+    USER_INFO {
+        ObjectId _id PK
+        ObjectId userId FK "ref User, not unique"
+        String firstName "required"
+        String lastName "required"
+        Number age "required"
+        Number height "cm, required"
+        Number weight "kg, required"
+        String bloodGroup "enum"
+        String email "regex"
+        String contactNumber "10 digits"
+        String activityLevel "enum"
+        String allergies
+        String healthConditions
+        String fitnessGoal "enum"
+        String dietaryPreferences "enum"
+        String foodPreferences
+        String hobbies
+        Number bmi
+        Number dailyCalorieRequirement
+    }
+    TRACKING {
+        ObjectId _id PK
+        ObjectId userId FK "ref User"
+        String foodName "required"
+        String foodId "required"
+        Object details "calories, protein, carbohydrates, fat, fiber"
+        String eatenDate "DD-MM-YYYY"
+        Number quantity "grams, min 1"
+    }
+    WATER_INTAKE {
+        ObjectId _id PK
+        ObjectId userId FK "ref User"
+        String date "YYYY-MM-DD"
+        Number waterConsumed "litres"
+    }
+    POST {
+        ObjectId _id PK
+        ObjectId userId FK "ref User"
+        String title "required"
+        String content "required"
+        String image "base64"
+        Date createdAt
+    }
+    PROFILE_PHOTO {
+        ObjectId _id PK
+        ObjectId userId FK "ref User"
+        String image "base64"
+    }
+    FOOD {
+        ObjectId _id PK
+        String name
+        String imageUrl
+        Number calories
+        Number protein
+        Number carbohydrates
+        Number fat
+        Number fiber
+    }
+    PHYSICAL {
+        ObjectId _id PK
+        ObjectId userId FK "ref users (wrong name)"
+        Number height
+        Number weight
+        Number bmi
+    }

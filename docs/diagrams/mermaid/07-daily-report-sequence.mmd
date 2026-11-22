@@ -1,0 +1,24 @@
+sequenceDiagram
+    autonumber
+    participant CR as node-cron<br/>"0 22 * * *" (TIMEZONE)
+    participant RC as reportController.js<br/>generateDailyReport()
+    participant DB as MongoDB
+    participant M as mailService.js<br/>sendReportEmail()
+    participant G as Gmail SMTP
+
+    CR->>RC: Every day at 22:00
+    RC->>RC: Target date = yesterday (server clock)<br/>formatted as DD-MM-YYYY
+    RC->>DB: User.find() (all users, verified or not)
+    loop For each user
+        RC->>DB: trackings.find({ userId, eatenDate })
+        RC->>DB: userinfos.findOne({ userId })
+        RC->>RC: Sum calories, protein, carbs, fat, fiber<br/>percent = calories / dailyCalorieRequirement x 100
+        alt user.email present
+            RC->>M: sendReportEmail(email, text)
+            M->>G: sendMail(...)
+            G-->>M: response
+        end
+        Note over RC: Errors for one user are logged and the loop continues
+    end
+
+    Note over CR,G: Manual triggers: POST /admin/send-daily-report (any valid token)<br/>and POST /admin/send-daily-report/:userId (ADMIN_EMAILS only)

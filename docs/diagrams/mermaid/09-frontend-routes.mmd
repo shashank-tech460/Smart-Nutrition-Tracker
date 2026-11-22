@@ -1,0 +1,59 @@
+flowchart LR
+    MAIN["main.jsx"] --> APP["App.jsx<br/>UserContext.Provider + BrowserRouter"]
+    APP --> Public
+    APP --> Guarded
+    APP --> Open
+    APP --> Dead
+
+    subgraph Public["Public routes"]
+        direction LR
+        R1["/ and /register<br/>Register"]
+        R2["/login<br/>Login"]
+        R3["* (any other path)<br/>NotFound"]
+    end
+
+    subgraph Guarded["Wrapped in Private.jsx (redirects to /login if no stored user)"]
+        direction LR
+        P1["/home<br/>Home"]
+        P2["/track<br/>Track"]
+        P3["/diet<br/>Diet"]
+        P4["/profile<br/>Profile"]
+        P5["/userinfo<br/>UserInfo"]
+        P6["/community<br/>Community"]
+        P7["/postcreate<br/>PostCreate"]
+        P8["/generateMeal<br/>MealPlanGenerator"]
+        P9["/food<br/>Food"]
+    end
+
+    subgraph Open["Not wrapped in Private.jsx"]
+        direction LR
+        O1["/generateWorkout<br/>GenerateWorkoutPlan"]
+        O2["/advice<br/>NutritionAdvice"]
+        O3["/posts/:postId<br/>ViewPost"]
+        O4["/trackburn<br/>TrackBurnedCalories<br/>(no nav link)"]
+        O5["/ingredients<br/>Ingredients<br/>(no nav link)"]
+        O6["/videomeet<br/>SlotBooking<br/>(no nav link)"]
+    end
+
+    subgraph Dead["Links with no matching route (show NotFound)"]
+        direction LR
+        D1["/userpost<br/>from Community 'View My Posts'"]
+        D2["/chat<br/>from Profile 'Chat' button"]
+    end
+
+    subgraph Legend["Legend"]
+        direction LR
+        L1["Works as coded"]
+        L2["Partially working"]
+        L3["Broken or UI only"]
+        L4["Dead link"]
+    end
+
+    classDef ok fill:#e8f5e9,stroke:#2e7d32,color:#1b3a1d
+    classDef partial fill:#fff8e1,stroke:#c08a00,color:#3d2c00
+    classDef broken fill:#fdecea,stroke:#c0392b,color:#5a1a12
+    classDef dead fill:#eceff1,stroke:#607d8b,color:#263238
+    class R1,R2,R3,P1,P2,P4,P5,P7,O1,O2,O3,O4,O5,L1 ok
+    class P3,P6,L2 partial
+    class P8,P9,O6,L3 broken
+    class D1,D2,L4 dead

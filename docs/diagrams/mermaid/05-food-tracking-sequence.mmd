@@ -1,0 +1,35 @@
+sequenceDiagram
+    autonumber
+    actor U as User
+    participant T as Track.jsx
+    participant RA as RapidAPI<br/>Edamam Food Database
+    participant API as Express<br/>POST /track
+    participant DB as MongoDB<br/>trackings
+    participant D as Diet.jsx
+
+    U->>T: Type a food name and click Search
+    T->>RA: GET /auto-complete?q=query
+    RA-->>T: ["name 1", "name 2", ...]
+    par One request per suggestion (Promise.all)
+        T->>RA: GET /api/food-database/v2/parser?ingr=name
+        RA-->>T: hints[0].food.nutrients (per 100 g)
+    end
+    T->>T: Remove duplicates with a Map<br/>key = label-image-calories
+    T-->>U: Show food cards (values per 100 g)
+
+    U->>T: Enter quantity in grams
+    T->>T: value x grams / 100 for each nutrient
+    U->>T: Click Track
+    T->>T: Build item: userId, random foodId, foodName,<br/>scaled details, quantity (default 100)
+    T->>API: POST /track (Bearer token)
+    API->>API: verifyToken, then eatenDate defaults to<br/>today as DD-MM-YYYY (server clock)
+    API->>DB: trackingModel.create(item)
+    API-->>T: 201 created document
+    Note over T: Result is only written to the console. No UI message.
+
+    U->>D: Open Diet page and pick a date
+    D->>API: GET /track/:userid/M-D-YYYY (no auth needed)
+    API->>API: Parses the date as D-M-YYYY
+    API->>DB: find({ userId, eatenDate }).populate("userId")
+    API-->>D: Matching entries (often empty or the wrong day)
+    Note over D,API: Known bug: month and day are swapped.<br/>The populated user includes the password hash.

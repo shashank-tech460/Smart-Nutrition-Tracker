@@ -1,0 +1,25 @@
+flowchart TD
+    REQ(["Incoming HTTP request"]) --> J["express.json({ limit: '10mb' })<br/>index.js:73"]
+    J --> UE["express.urlencoded({ limit: '10mb' })<br/>index.js:74"]
+    UE --> CO["cors() with default options<br/>all origins allowed, index.js:75"]
+    CO --> MO["morgan('dev') request log<br/>index.js:77"]
+    MO --> RT{"Route matched?"}
+    RT -->|No| N404["Express default 404 response"]
+    RT -->|"Yes, /register/*"| AR["routes/auth.js router"]
+    RT -->|"Yes, other routes"| RL{"Route-level middleware"}
+    RL -->|"10 routes"| VT["verifyToken.js<br/>checks JWT signature only"]
+    RL -->|"POST /posts,<br/>POST /upload_profile_photo"| MU["multer upload.single('image')<br/>memory storage, 10 MB"]
+    RL -->|"no middleware"| H
+    VT -->|"invalid or missing"| E401["400 or 401 JSON"]
+    VT -->|valid| H["Route handler<br/>asyncHandler() or try/catch"]
+    MU --> H
+    AR --> H
+    H -->|success| RES(["JSON or text response"])
+    H -->|"next(err) from asyncHandler"| EH["Central error handler<br/>index.js:737<br/>{ message } with err.status or 500"]
+    EH --> RES
+    H -.->|"uncaught errors"| PH["process.on('uncaughtException')<br/>process.on('unhandledRejection')<br/>log only, index.js:744-752"]
+
+    classDef mw fill:#eef6ff,stroke:#3b6ea5,color:#1b2a3a
+    classDef err fill:#fdecea,stroke:#c0392b,color:#5a1a12
+    class J,UE,CO,MO,VT,MU mw
+    class E401,EH,PH,N404 err

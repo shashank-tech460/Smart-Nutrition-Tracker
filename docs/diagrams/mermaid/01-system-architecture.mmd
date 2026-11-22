@@ -1,0 +1,41 @@
+flowchart TB
+    subgraph Browser["User's browser"]
+        SPA["React 18 SPA (Vite)<br/>frontend/src"]
+        LS[("localStorage<br/>key: nutrify-user")]
+    end
+
+    subgraph Render["Render web service (backend)"]
+        API["Express 4 REST API<br/>backend/index.js"]
+        CRON["node-cron jobs<br/>(same Node process)"]
+    end
+
+    DB[("MongoDB Atlas<br/>via Mongoose 8")]
+    GMAIL["Gmail SMTP<br/>(nodemailer)"]
+    TWILIO["Twilio SMS API"]
+    EDAMAM["Edamam Recipe API"]
+
+    subgraph Direct["Third-party APIs called directly from the browser<br/>(API keys embedded in frontend code)"]
+        RFOOD["RapidAPI<br/>Edamam Food Database"]
+        RWORK["RapidAPI<br/>AI Workout Planner"]
+        RBURN["RapidAPI<br/>Calories Burned"]
+        SPOON["Spoonacular"]
+        BOT["Botpress webchat"]
+    end
+
+    SPA <-->|"read / write token"| LS
+    SPA -->|"HTTPS, JSON or multipart<br/>Authorization: Bearer JWT"| API
+    API -->|"Mongoose queries"| DB
+    API -->|"OTP email"| GMAIL
+    CRON -->|"22:00 daily report"| GMAIL
+    CRON -->|"08:00 / 12:00 / 19:00 reminders"| TWILIO
+    CRON -->|"read users, trackings,<br/>user infos"| DB
+    API -.->|"POST /generateMeal proxy<br/>(not called by UI)"| EDAMAM
+    SPA -.->|"MealPlanGenerator.jsx<br/>(direct call)"| EDAMAM
+    SPA -->|"HTTPS from browser"| Direct
+
+    classDef store fill:#eef6ff,stroke:#3b6ea5,color:#1b2a3a
+    classDef svc fill:#f4f9f1,stroke:#4f7f3a,color:#1e2b18
+    classDef ext fill:#fff7ec,stroke:#b9772e,color:#3a2610
+    class LS,DB store
+    class API,CRON,SPA svc
+    class GMAIL,TWILIO,EDAMAM,RFOOD,RWORK,RBURN,SPOON,BOT ext

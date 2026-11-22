@@ -1,0 +1,36 @@
+sequenceDiagram
+    autonumber
+    actor U as User
+    participant R as Register.jsx
+    participant A as routes/auth.js<br/>(mounted at /register)
+    participant DB as MongoDB<br/>users
+    participant M as mailService.js<br/>(Gmail SMTP)
+
+    U->>R: Fill name, email, password, age and click JOIN
+    R->>A: POST /register/generate-otp { email }
+    A->>DB: User.findOne({ email })
+    alt No user with this email
+        A->>A: new User({ email })
+    end
+    A->>A: otp = 6-digit Math.random() value<br/>otpExpiry = now + 5 minutes
+    A->>DB: user.save()
+    A->>M: sendOtpEmail(email, otp)
+    M-->>U: Email "Your OTP is ..."
+    Note over A: OTP is also printed to the server log (auth.js:28)
+    A-->>R: 200 { success: true, message }
+    R-->>U: Show OTP input field
+
+    U->>R: Enter OTP and click Verify OTP
+    R->>A: POST /register/verify-otp { name, email, password, age, otp }
+    A->>DB: User.findOne({ email })
+    alt User missing, wrong OTP or expired OTP
+        A-->>R: 200 { success: false, message }
+        R-->>U: Show error message
+    else OTP valid
+        A->>A: password = bcrypt.hash(password, 10)<br/>isVerified = true, otp = null, otpExpiry = null
+        A->>DB: user.save()
+        A-->>R: 200 { success: true, message }
+        R-->>U: "Registration successful!" (form is reset)
+    end
+
+    Note over R,A: Failures also return HTTP 200 with success: false.<br/>A legacy POST /register route (index.js:181) still creates users without OTP.

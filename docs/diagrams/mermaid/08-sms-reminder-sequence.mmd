@@ -1,0 +1,22 @@
+sequenceDiagram
+    autonumber
+    participant CR as node-cron<br/>08:00, 12:00, 19:00 (TIMEZONE)
+    participant S as sendMessage.js<br/>sendMessageToAllUsers()
+    participant DB as MongoDB<br/>userinfos
+    participant TW as Twilio SMS API
+    actor P as User's phone
+
+    CR->>S: Fixed message for breakfast, lunch or dinner
+    S->>DB: find({ contactNumber exists and not null })
+    DB-->>S: List of user profiles
+    loop For each profile (one at a time)
+        S->>S: Keep digits only, then add "+91"
+        alt Twilio credentials missing
+            S->>S: console.log("[MOCK] Would send ...")
+        else Twilio client configured
+            S->>TW: messages.create({ body, from, to })
+            TW-->>P: SMS
+        end
+    end
+    Note over S: One try/catch wraps the whole loop.<br/>A single failed send stops the remaining sends.
+    Note over CR,TW: Also triggered by POST /send-messages, which has no authentication.

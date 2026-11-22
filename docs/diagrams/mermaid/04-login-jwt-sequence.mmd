@@ -1,0 +1,41 @@
+sequenceDiagram
+    autonumber
+    actor U as User
+    participant L as Login.jsx
+    participant C as UserContext +<br/>localStorage
+    participant API as Express<br/>backend/index.js
+    participant V as verifyToken.js
+    participant DB as MongoDB
+
+    U->>L: Enter email and password
+    L->>API: POST /login { email, password }
+    API->>DB: userModel.findOne({ email })
+    alt No user found
+        API-->>L: 404 { message: "User not found" }
+    else User found
+        API->>API: bcrypt.compare(password, user.password)
+        alt Password does not match
+            API-->>L: 403 { message: "Incorrect password" }
+        else Password matches
+            API->>API: jwt.sign({ email }, hardcoded secret)<br/>no expiresIn, isVerified not checked
+            API-->>L: 200 { message, token, userid, name }
+            L->>C: localStorage "nutrify-user" = response<br/>setLoggedUser(response)
+            L-->>U: navigate("/Home")
+        end
+    end
+
+    Note over U,DB: Later: any page that calls a protected endpoint
+    L->>API: GET /userinfo/:userId<br/>Authorization: Bearer token
+    API->>V: verifyToken(req, res, next)
+    alt Header missing
+        V-->>L: 401 "Authorization token missing"
+    else Header not two parts
+        V-->>L: 400 "Malformed authorization header"
+    else Signature invalid
+        V-->>L: 401 "Invalid Token"
+    else Signature valid
+        V->>API: req.user = { email, iat }, next()
+        API->>DB: UserinfoModel.findOne({ userId })
+        Note over API: userId comes from the URL.<br/>It is never compared with the token owner.
+        API-->>L: 200 user info, or 404
+    end
